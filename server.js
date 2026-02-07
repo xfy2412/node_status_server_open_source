@@ -23,6 +23,12 @@ const CACHE_INTERVAL = 10000; // 10秒
 // IP请求计数存储
 const ipRequestCount = new Map();
 
+// 定时清空IP请求计数（每小时）
+setInterval(() => {
+  ipRequestCount.clear();
+  systemLog('IP请求计数已清空');
+}, 60 * 60 * 1000);
+
 // 上一次CPU时间戳（用于计算CPU使用率）
 let lastCpuInfo = null;
 let lastCpuTimestamp = 0;
@@ -255,11 +261,7 @@ app.get('/api/status', (req, res) => {
     
     // 返回状态信息
     res.json({
-      success: true,
-      status: {
-        server: 'OK',
-        bot: 'OK'
-      },
+      success: true,      
       system: systemStats,
       topIPs: topIPs,
       timestamp: new Date().toISOString()
