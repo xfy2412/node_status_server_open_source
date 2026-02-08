@@ -26,7 +26,7 @@ const ipRequestCount = new Map();
 // 定时清空IP请求计数（每小时）
 setInterval(() => {
   ipRequestCount.clear();
-  systemLog('IP请求计数已清空');
+  console.log('IP请求计数已清空');
 }, 60 * 60 * 1000);
 
 // 上一次CPU时间戳（用于计算CPU使用率）

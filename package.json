@@ -1,5 +1,5 @@
 {
-  "name": "status-open-source",
+  "name": "node-status-server-open-source",
   "version": "1.0.0",
   "description": "简单的服务器状态监控服务",
   "main": "server.js",
