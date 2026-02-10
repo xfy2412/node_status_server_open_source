@@ -1,0 +1,17 @@
+{
+    "server": {
+        "port": 3000,
+        "enableRateLimit": true,
+        "minSecondsAfterLastRequest": 10
+    },
+    "getClientIp": {
+        "getIpByXFF": true,
+        "getIpByXFFFromStart": true,
+        "getIpByXFFCount": 1
+    },
+    "systemStats": {
+        "updateInterval": 10000,
+        "ipRequestCountSaveMinutes": 60,
+        "MaxHistoryLength": 60
+    }
+}
